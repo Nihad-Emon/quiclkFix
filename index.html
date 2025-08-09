@@ -103,7 +103,7 @@
         <a class="navbar-brand nav-link" target="_blank" href="#">
           <strong>
             <img src="/img/Quick.png" alt="QuickFix Logo" class="brand-logo" />
-            <span class="brand-name">QuickFix</span>
+            <span class="brand-name">সহজে সমাধান</span>
           </strong>
         </a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample"
@@ -113,23 +113,23 @@
         <div class="collapse navbar-collapse text-center" id="navbarExample">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a id="home_lang" class="nav-link" aria-current="page" href="#introCarousel">Home</a>
+              <a id="home_lang" class="nav-link" aria-current="page" href="#introCarousel">হোম</a>
             </li>
             <li class="nav-item ">
-              <a id="about_lang" class="nav-link" href="#about">About</a>
+              <a id="about_lang" class="nav-link" href="#about">আমাদের সম্পর্কে</a>
             </li>
             <li class="nav-item">
-              <a id="services_lang" class="nav-link" href="#service">Service</a>
+              <a id="ourteam_lang" class="nav-link" href="#ourteam">আমাদের টেকনিশিয়ান</a>
             </li>
             <li class="nav-item">
-              <a id="contact_lang" class="nav-link" href="#contact">Contact</a>
+              <a id="services_lang" class="nav-link" href="#service">সেবাসমূহ</a>
             </li>
-            <li>
+            <!-- <li>
               <div class="language-switcher">
                 <button onclick="setLanguage('en')" class="lang-btn">English</button>
                 <button onclick="setLanguage('bn')" class="lang-btn">বাংলা</button>
               </div>
-            </li>
+            </li> -->
           </ul>
 
           <!-- <ul class="navbar-nav list-inline"> -->
@@ -144,10 +144,10 @@
       </div>
     </nav>
     <!-- Navbar -->
-    <div class="language-switcher">
+    <!-- <div class="language-switcher">
       <button onclick="setLanguage('en')" class="lang-btn">English</button>
       <button onclick="setLanguage('bn')" class="lang-btn">বাংলা</button>
-    </div>
+    </div> -->
 
     <!-- Carousel wrapper -->
     <div id="introCarousel" class="carousel slide carousel-fade shadow-2-strong" data-mdb-ride="carousel">
@@ -165,29 +165,24 @@
           <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="text-white text-center">
-                <h1 id="carousel1_title1" class="mb-3">WE PROVIDE</h1>
-                <h1 id="carousel1_title2" class="mb-4">PROFESSIONAL</h1>
-                <h1 id="carousel1_title3" class="mb-4">SERVICES</h1>
-                <p id="carousel1_desc">We accept AC service, AC washing, AC dismantling and installation, Freon filling
-                  etc.</p>
+                <h1 id="carousel1_title1" class="mb-3">আপনার জন্য</h1>
+                <h1 id="carousel1_title2" class="mb-4">আমাদের দক্ষ টিমের</h1>
+                <h1 id="carousel1_title3" class="mb-4">বিশ্বাসযোগ্য সেবা</h1>
+                <p id="carousel1_desc">আমরা AC সার্ভিসিং, ফ্রিজ, ওয়াশিং মেশিন এবং মাইক্রোওভেনের সেবা প্রদান করি।</p>
                 <div class="custom-search-box">
-                  <input list="locations" id="locationInput" placeholder="    Enter your location">
+                  <input list="locations" id="locationInput" placeholder="    আপনার অবস্থান লিখুন">
                   <datalist id="locations">
-                    <option value="Dhaka">
-                    <option value="Chattogram">
-                    <option value="Khulna">
-                    <option value="Rajshahi">
-                    <option value="Barisal">
-                    <option value="Sylhet">
-                    <option value="Rangpur">
-                    <option value="Mymensingh">
+                    <option value="ঢাকা">
+                    <option value="চট্টগ্রাম">
+                    <option value="খুলনা">
+                    <option value="রাজশাহী">
+                    <option value="বরিশাল">
+                    <option value="সিলেট">
+                    <option value="রংপুর">
+                    <option value="ময়মনসিংহ">
                   </datalist>
-                  <button id="searchbutton" onclick="searchLocation()">Find Services</button>
+                  <button id="searchbutton" onclick="showService()">সেবা খুঁজুন</button>
                 </div>
-
-
-
-                <a href="#contact"><button id="carousel1_btn">CONTACT US</button></a>
               </div>
             </div>
           </div>
@@ -199,28 +194,24 @@
           <div class="mask" style="background-color: rgba(0, 0, 0, 0.3);">
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="text-white text-center">
-                <h1 id="carousel2_title1" class="mb-3">BEST</h1>
-                <h1 id="carousel2_title2" class="mb-4">PROFESSIONAL</h1>
-                <h1 id="carousel2_title3" class="mb-4">SERVICES</h1>
-                <p id="carousel2_desc">We accept AC service, AC washing, AC dismantling and installation, Freon filling
-                  etc.</p>
-
+                <h1 id="carousel1_title1" class="mb-3">সার্ভিস আপনার দরজায়</h1>
+                <h1 id="carousel1_title2" class="mb-4">দ্রুত ও সহজ</h1>
+                <h1 id="carousel1_title3" class="mb-4">যেকোনো সমস্যা সমাধান</h1>
+                <p id="carousel1_desc">আমরা AC সার্ভিসিং, ফ্রিজ, ওয়াশিং মেশিন এবং মাইক্রোওভেনের সেবা প্রদান করি।</p>
                 <div class="custom-search-box">
-                  <input list="locations" id="locationInput" placeholder="    Enter your location">
+                  <input list="locations" id="locationInput" placeholder="    আপনার অবস্থান লিখুন">
                   <datalist id="locations">
-                    <option value="Dhaka">
-                    <option value="Chattogram">
-                    <option value="Khulna">
-                    <option value="Rajshahi">
-                    <option value="Barisal">
-                    <option value="Sylhet">
-                    <option value="Rangpur">
-                    <option value="Mymensingh">
+                    <option value="ঢাকা">
+                    <option value="চট্টগ্রাম">
+                    <option value="খুলনা">
+                    <option value="রাজশাহী">
+                    <option value="বরিশাল">
+                    <option value="সিলেট">
+                    <option value="রংপুর">
+                    <option value="ময়মনসিংহ">
                   </datalist>
-                  <button id="searchbutton" onclick="searchLocation()">Find Services</button>
+                  <button id="searchbutton" onclick="showService()">সেবা খুঁজুন</button>
                 </div>
-
-                <a href="#about"><button id="carousel2_btn">LEARN MORE</button></a>
               </div>
             </div>
           </div>
@@ -237,28 +228,24 @@
               ">
             <div class="d-flex justify-content-center align-items-center h-100">
               <div class="text-white text-center">
-                <h1 id="carousel3_title1" class="mb-3">24/7</h1>
-                <h1 id="carousel3_title2" class="mb-4">EMERGENCY</h1>
-                <h1 id="carousel3_title3" class="mb-4">SUPPORT</h1>
-                <p id="carousel3_desc">
-                  No matter the time, our expert AC technicians are ready to assist you — anytime, anywhere.
-                </p>
+                <h1 id="carousel1_title1" class="mb-3">বিশ্বাস করুন,</h1>
+                <h1 id="carousel1_title2" class="mb-4">আমাদের টিমের</h1>
+                <h1 id="carousel1_title3" class="mb-4">দক্ষতার ওপর</h1>
+                <p id="carousel1_desc">আমরা AC সার্ভিসিং, ফ্রিজ, ওয়াশিং মেশিন এবং মাইক্রোওভেনের সেবা প্রদান করি।</p>
                 <div class="custom-search-box">
-                  <input list="locations" id="locationInput" placeholder="    Enter your location">
+                  <input list="locations" id="locationInput" placeholder="    আপনার অবস্থান লিখুন">
                   <datalist id="locations">
-                    <option value="Dhaka">
-                    <option value="Chattogram">
-                    <option value="Khulna">
-                    <option value="Rajshahi">
-                    <option value="Barisal">
-                    <option value="Sylhet">
-                    <option value="Rangpur">
-                    <option value="Mymensingh">
+                    <option value="ঢাকা">
+                    <option value="চট্টগ্রাম">
+                    <option value="খুলনা">
+                    <option value="রাজশাহী">
+                    <option value="বরিশাল">
+                    <option value="সিলেট">
+                    <option value="রংপুর">
+                    <option value="ময়মনসিংহ">
                   </datalist>
-                  <button id="searchbutton" onclick="searchLocation()">Find Services</button>
+                  <button id="searchbutton" onclick="showService()">সেবা খুঁজুন</button>
                 </div>
-                <a href="#service"><button id="carousel3_btn">Our Services</button></a>
-
               </div>
             </div>
           </div>
@@ -296,22 +283,36 @@
           </div>
 
           <div class="col-md-6 gx-5 mb-4">
-            <h4 id="ac_cool_title"><strong>AC SERVICES</strong></h4>
+            <h4 id="ac_cool_title"><strong>আমাদের সম্পর্কে</strong></h4>
             <p id="ac_cool_desc1" class="text-muted">
-              At QuickFix, we provide expert AC repair, cleaning, and installation services — available 24/7 across all
-              of Bangladesh.
-              Whether it’s fixing a faulty unit, doing a deep clean, or installing a brand-new system, our experienced
-              technicians are always ready to deliver fast, reliable, and affordable service.
-              We’re committed to keeping your home or office cool and comfortable year-round, with a strong focus on
-              quality, customer satisfaction, and on-time support.
-              Trust QuickFix — your go-to AC service partner, anytime you need us.
+              <span style="font-weight: bold; color: rgb(74, 74, 74);">সহজে সমাধান-এ, আমরা দক্ষ এ সি, ফ্রিজ, ওয়াশিং
+                মেশিন এবং মাইক্রোওভেনের মেরামত, পরিষ্কার এবং ইনস্টলেশন সেবা ২৪/৭ সারাদেশে প্রদান করি।</span>
+              যেকোনো সমস্যা — মেরামত, গভীর পরিষ্কার, বা নতুন যন্ত্রপাতি ইনস্টলেশন — আমাদের অভিজ্ঞ টেকনিশিয়ানরা দ্রুত,
+              নির্ভরযোগ্য এবং সাশ্রয়ী সেবা দিতে সবসময় প্রস্তুত।
+              আমরা আপনার বাড়ি বা অফিসকে সারাবছর আরামদায়ক রাখতে সর্বোচ্চ মান এবং গ্রাহক সন্তুষ্টির প্রতিশ্রুতি দিয়ে
+              কাজ করি।
+              বিশ্বাস করুন সহজে সমাধানকে, যখনই আপনার সেবার প্রয়োজন হবে।
             </p>
-            <p><strong id="ac_cool_services_title">Services?</strong></p>
+            <p><strong id="ac_cool_services_title">সেবাসমূহ?</strong></p>
             <p id="ac_cool_desc2" class="text-muted">
-              Driven by the customer’s need for honest, reliable, and trustworthy Air Conditioner (AC) service, we are
-              committed to fulfilling these expectations.
-              Supported by experienced technicians and industry-standard equipment, we strive to deliver excellent
-              service quality to customers across various sectors.
+              আমাদের সেবাসমূহের মধ্যে রয়েছে —<br>
+            <ul>
+              <li>
+                ১. AC সার্ভিসিং
+              </li>
+              <li>
+                ২. ফ্রিজ সার্ভিস
+              </li>
+              <li>
+                ৩. ওয়াশিং মেশিন সার্ভিস
+              </li>
+              <li>
+                ৪. মাইক্রোওভেন সার্ভিস
+              </li>
+            </ul>
+            <span class="text-muted">আমাদের অভিজ্ঞ টেকনিশিয়ানরা আধুনিক সরঞ্জাম নিয়ে আপনার যেকোনো যন্ত্রপাতির সমস্যা
+              দ্রুত সমাধান করতে প্রস্তুত।
+              সহজে সমাধান-এ, আমরা নির্ভরযোগ্যতা ও গুণগতমানকে সর্বোচ্চ গুরুত্ব দিয়ে গ্রাহক সন্তুষ্টি নিশ্চিত করি।</span>
             </p>
           </div>
         </div>
@@ -320,7 +321,7 @@
       <div class="container">
 
         <!--Section: Testimonials v.3-->
-        <section id="testimonials" class="team-section mt-2 mb-5">
+        <section id="ourteam" class="team-section mt-2 mb-5">
 
           <!--Secion heading-->
           <div class="row mt-5 mb-4">
@@ -328,7 +329,7 @@
               <div class="divider-new">
                 <h3 id="testimonials_title" class="text-center text-uppercase font-weight-bold mr-3 ml-3 wow fadeIn"
                   data-wow-delay="0.2s">
-                  Reviews</h3>
+                  আমাদের টেকনিশিয়ানদের সম্পর্কে জানুন</h3>
               </div>
             </div>
             <!--/Secion heading-->
@@ -336,7 +337,11 @@
             <!--Section description-->
             <p id="testimonials_desc" class="text-center grey-text w-responsive mx-auto mb-5 wow fadeIn"
               data-wow-delay="0.2s">
-              Here are some testimonials from customers who have used the AC services on this website.
+              আমাদের টেকনিশিয়ানরা সত্যিই খুব দক্ষ আর অভিজ্ঞ।
+              বহু বছরের কাজের অভিজ্ঞতা নিয়ে তারা যেকোনো যন্ত্রপাতির সমস্যা খুব সহজে এবং দ্রুত সমাধান করে দেন।
+              তাদের আন্তরিকতা আর মনোযোগের কারণে আপনার যন্ত্রপাতি যেন নতুনের মতো কাজ করে, সেটা নিশ্চিত করা আমাদের প্রধান
+              লক্ষ্য।
+              আপনার ঘর-অফিসের সব যন্ত্রপাতির সমস্যায় তারা আপনার বিশ্বস্ত বন্ধু।
             </p>
 
             <!--First row-->
@@ -348,17 +353,19 @@
                 <div class="testimonial">
                   <!--Avatar-->
                   <div class="avatar mx-auto mb-4">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%285%29.jpg"
-                      class="rounded-circle img-fluid z-depth-1-half">
+                    <img src="/img/cartoon.jpg" class="rounded-circle img-fluid z-depth-1-half"
+                      style="width: 150px; height: 150px; object-fit: cover;">
                   </div>
-
+                  
                   <!--Content-->
-                  <h4 class="font-weight-bold">Jane</h4>
+                  <h4 class="font-weight-bold">মোঃ আব্দুল্লাহ আল মামুন</h4>
+                  <p><strong>অভিজ্ঞতা:</strong> ৮ বছর</p>
+                  <p><strong>বিশেষত্ব:</strong> এ সি, ফ্রিজ, ওয়াশিং মেশিন ও মাইক্রোওভেন মেরামত</p>
                   <p>
-                    <i class="fas fa-quote-left "></i>I am very impressed with the AC service provided by this website.
-                    They are very professional and responsive in handling my AC problem. The technicians who were sent
-                    are also very experienced and efficient in doing the repairs. I highly recommend their services to
-                    anyone who needs AC maintenance or repairs.
+                    মোঃ আব্দুল্লাহ আল মামুন একজন দক্ষ ও বিশ্বাসযোগ্য টেকনিশিয়ান, যিনি দীর্ঘ ৮ বছর ধরে
+                    ঘরোয়া যন্ত্রপাতির মেরামতে অভিজ্ঞতা অর্জন করেছেন। তিনি সমস্যা সনাক্তকরণ ও দ্রুত সমাধানে পারদর্শী।
+                    গ্রাহকের সন্তুষ্টি তাঁর প্রধান অগ্রাধিকার। মো. আব্দুল্লাহ কাজের গুণগত মান বজায় রেখে প্রতিটি কাজ
+                    নিষ্ঠার সঙ্গে সম্পন্ন করেন।
                   </p>
 
                   <!--Review-->
@@ -376,669 +383,650 @@
               <!--Second column-->
               <div class="col-md-4 mb-4 wow fadeIn" data-wow-delay="0.4s">
                 <div class="testimonial">
-                  <!--Avatar-->
                   <div class="avatar mx-auto mb-4">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%289%29.jpg"
-                      class="rounded-circle img-fluid z-depth-1-half">
+                    <img src="/img/cartoon.jpg" class="rounded-circle img-fluid z-depth-1-half"
+                      style="width: 150px; height: 150px; object-fit: cover;">
                   </div>
-
-                  <!--Content-->
-                  <h4 class="font-weight-bold">John</h4>
+                <!--Content-->
+                  <h4 class="font-weight-bold">মোঃ আব্দুল্লাহ আল মামুন</h4>
+                  <p><strong>অভিজ্ঞতা:</strong> ৮ বছর</p>
+                  <p><strong>বিশেষত্ব:</strong> এ সি, ফ্রিজ, ওয়াশিং মেশিন ও মাইক্রোওভেন মেরামত</p>
                   <p>
-                    <i class="fas fa-quote-left"></i>I was really surprised with the AC service on this website.
-                    They were very quick to respond to my request and within a short time, a qualified technician
-                    came to my house and repaired my AC very well. I am very happy with the result
-                    and will definitely use their services again in the future.
+                    মোঃ আব্দুল্লাহ আল মামুন একজন দক্ষ ও বিশ্বাসযোগ্য টেকনিশিয়ান, যিনি দীর্ঘ ৮ বছর ধরে
+                    ঘরোয়া যন্ত্রপাতির মেরামতে অভিজ্ঞতা অর্জন করেছেন। তিনি সমস্যা সনাক্তকরণ ও দ্রুত সমাধানে পারদর্শী।
+                    গ্রাহকের সন্তুষ্টি তাঁর প্রধান অগ্রাধিকার। মো. আব্দুল্লাহ কাজের গুণগত মান বজায় রেখে প্রতিটি কাজ
+                    নিষ্ঠার সঙ্গে সম্পন্ন করেন।
                   </p>
 
-                  <!--Review-->
-                  <div class="green-text">
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                  </div>
+                <!--Review-->
+                <div class="green-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
                 </div>
               </div>
-              <!--/Second column-->
-
-              <!--Third column-->
-              <div class="col-md-4 mb-4 wow fadeIn" data-wow-delay="0.4s">
-                <div class="testimonial">
-                  <!--Avatar-->
-                  <div class="avatar mx-auto mb-4">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%288%29.jpg"
-                      class="rounded-circle img-fluid z-depth-1-half">
-                  </div>
-                  <!--Content-->
-                  <h4 class="font-weight-bold">Tom</h4>
-                  <p>
-                    <i class="fas fa-quote-left"></i>I am very satisfied with the AC service on this website. Their
-                    customer service is excellent and the staff is very friendly. The technician who was sent to my
-                    house was also very knowledgeable and explained clearly what was being done. I will definitely
-                    recommend them to my friends and family.
-                  </p>
-
-                  <!--Review-->
-                  <div class="green-text">
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="fas fa-star"> </i>
-                    <i class="far fa-star"> </i>
-                  </div>
-
-                </div>
-              </div>
-              <!--/Third column-->
-
             </div>
-            <!--/First row-->
-          </div>
+            <!--/Second column-->
 
-        </section>
-        <!--/Section: Testimonials v.3-->
+            <!--Third column-->
+            <div class="col-md-4 mb-4 wow fadeIn" data-wow-delay="0.4s">
+              <div class="testimonial">
+                <div class="avatar mx-auto mb-4">
+                    <img src="/img/cartoon.jpg" class="rounded-circle img-fluid z-depth-1-half"
+                      style="width: 150px; height: 150px; object-fit: cover;">
+                  </div>
+                <!--Content-->
+                  <h4 class="font-weight-bold">মোঃ আব্দুল্লাহ আল মামুন</h4>
+                  <p><strong>অভিজ্ঞতা:</strong> ৮ বছর</p>
+                  <p><strong>বিশেষত্ব:</strong> এ সি, ফ্রিজ, ওয়াশিং মেশিন ও মাইক্রোওভেন মেরামত</p>
+                  <p>
+                    মোঃ আব্দুল্লাহ আল মামুন একজন দক্ষ ও বিশ্বাসযোগ্য টেকনিশিয়ান, যিনি দীর্ঘ ৮ বছর ধরে
+                    ঘরোয়া যন্ত্রপাতির মেরামতে অভিজ্ঞতা অর্জন করেছেন। তিনি সমস্যা সনাক্তকরণ ও দ্রুত সমাধানে পারদর্শী।
+                    গ্রাহকের সন্তুষ্টি তাঁর প্রধান অগ্রাধিকার। মো. আব্দুল্লাহ কাজের গুণগত মান বজায় রেখে প্রতিটি কাজ
+                    নিষ্ঠার সঙ্গে সম্পন্ন করেন।
+                  </p>
 
-      </div>
-      <!--Section: Content-->
+                <!--Review-->
+                <div class="green-text">
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="fas fa-star"> </i>
+                  <i class="far fa-star"> </i>
+                </div>
 
-
-
-      <hr class="my-5" />
-
-      <!--Section: Content-->
-      <section class="text-center" id="service">
-        <h4 class="mb-5"><strong>SERVICES</strong></h4>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="img/service1.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
               </div>
-              <div class="card-body">
-                <h5 class="card-title">AC Installation / Dissolution</h5>
-                <p class="card-text">
-                  Trusted and Guaranteed AC Service in Bangladesh
-                </p>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-                  Details
-                </button>
+            </div>
+            <!--/Third column-->
 
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                  aria-hidden="true" style="z-index: 9999999;">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">SERVICE AC</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <h1 align="center"><b>Trusted & Guaranteed AC Installation & Dismantling Services Across
-                            Bangladesh</b></h1>
+          </div>
+          <!--/First row-->
+      </div>
 
-                        <p>
-                          We offer reliable <u>AC installation and dismantling services</u> all over Bangladesh at
-                          affordable rates.
-                          Our experienced technicians ensure every job is done safely, efficiently, and with guaranteed
-                          service quality.
-                          Whether you’re relocating, upgrading, or replacing your unit — we’re here to help.
-                        </p>
+      </section>
+      <!--/Section: Testimonials v.3-->
 
-                        <p>
-                          We handle all AC brands and types (<em>split AC, cassette AC, standing floor AC, central
-                            AC</em>) with full support for indoor and outdoor units.
-                        </p>
+    </div>
+    <!--Section: Content-->
 
-                        <h3><b><u>Our Installation & Dismantling Services Include:</u></b></h3>
 
-                        <ul>
-                          <li>Complete AC Installation (Indoor + Outdoor Unit)</li>
-                          <li>Professional Dismantling & Safe Relocation</li>
-                          <li>Freon Gas Discharge & Recharge (R22 / R32 / R410)</li>
-                          <li>Copper Pipe Installation & Adjustment</li>
-                          <li>Wiring & Electric Connection Setup</li>
-                          <li>Wall Bracket & Stand Mounting</li>
-                          <li>Drain Pipe & Hose Setup</li>
-                          <li>Remote Control Setup</li>
-                          <li>Leak Testing & Insulation</li>
-                          <li>System Performance Check</li>
-                          <li>Compressor & Capacitor Fitting (if required)</li>
-                        </ul>
 
-                        <h3><b><u>Pricing (Approximate):</u></b></h3>
+    <hr class="my-5" />
 
-                        <table border="1" cellpadding="10" cellspacing="0"
-                          style="width: 100%; border-collapse: collapse; text-align: left;">
-                          <thead>
+    <!--Section: Content-->
+    <section class="text-center" id="service">
+      <h4 class="mb-5"><strong>সেবাসমূহ</strong></h4>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="img/air-conditioner-repairing-service.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">AC সার্ভিসিং</h5>
+              <p class="card-text">
+                প্রিমিয়াম এয়ার কন্ডিশন সেবা – সারা বাংলাদেশে, আপনার দরজায়!
+              </p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
+                বিস্তারিত
+              </button>
+              <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#reviewModal">
+                রিভিউ ⭐
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" style="z-index: 9999999;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">AC সার্ভিসিং</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h1 align="center"><b>❄️ প্রিমিয়াম এয়ার কন্ডিশন সেবা – সারা বাংলাদেশে, আপনার দরজায়!</b></h1>
+
+                      <p>
+                        আপনার এয়ার কন্ডিশনের সব ধরণের সমস্যা ও রক্ষণাবেক্ষণের জন্য আমরা আছি—দ্রুত,
+                        নির্ভরযোগ্য এবং বিশেষজ্ঞ সেবা নিয়ে। নিয়মিত সার্ভিসিং থেকে শুরু করে বড় ধরনের
+                        রিপেয়ার পর্যন্ত, সারা বাংলাদেশে আমরা সরবরাহ করছি সাশ্রয়ী মূল্যে সেরা মানের সেবা।
+                        নিচে আমাদের জনপ্রিয় সেবাসমূহ ও তাদের মূল্য তালিকা দেওয়া হলো:
+                      </p>
+
+                      <h3><b><u>মূল্য তালিকা (আনুমানিক):</u></b></h3>
+
+                      <table border="1" cellpadding="10" cellspacing="0"
+                        style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                          <tr>
+                            <th>সেবাসমূহ</th>
+                            <th>মূল্য (৳)</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>সার্ভিসিং</td>
+                            <td>৳ ৮০০ – ৳ ১,০০০</td>
+                          </tr>
+                          <tr>
+                            <td>গ্যাস চার্জ</td>
+                            <td>৳ ১,২০০ – ৳ ২,৬০০</td>
+                          </tr>
+                          <tr>
+                            <td>লিকেজ রিপেয়ার</td>
+                            <td>৳ ১,৯৯৯</td>
+                          </tr>
+                          <tr>
+                            <td>খোলা + ফিটিং</td>
+                            <td>৳ ২,৯৯৯</td>
+                          </tr>
+                          <tr>
+                            <td>সাধারণ চেকআপ</td>
+                            <td>৳ ১৪৯</td>
+                          </tr>
+                          <tr>
+                            <td>কম্প্রেসর রিপ্লেস</td>
+                            <td>৳ ২,৯৯৯</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <p style="margin-top: 10px;">
+                        <small><i>*চূড়ান্ত মূল্য এসির ধরণ, পাইপের দৈর্ঘ্য, অবস্থান এবং ইনস্টলেশনের জটিলতার উপর নির্ভর
+                            করে পরিবর্তিত হতে পারে।*</i></small>
+                      </p>
+
+                      <p><strong>সেবা প্রয়োজন? কল করুন QuickFix — আমরা সারা বাংলাদেশে, ২৪/৭ প্রস্তুত!</strong></p>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">বন্ধ করুন</button>
+                      <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                        data-mdb-target="#orderModal" data-mdb-dismiss="modal">অর্ডার করুন</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="img/fridge.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">ফ্রিজ সার্ভিসিং</h5>
+              <p class="card-text">
+                ফ্রিজ সার্ভিস ও রিপেয়ার – সাশ্রয়ী দামে, আপনার দরজায়!
+              </p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
+                বিস্তারিত
+              </button>
+              <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#reviewModal">
+                রিভিউ ⭐
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+                aria-hidden="true" style="z-index: 9999999;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel2">ফ্রিজ সার্ভিসিং</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h2 class="text-center fw-bold mb-4">
+                        🧊 ফ্রিজ সার্ভিস ও রিপেয়ার – সাশ্রয়ী দামে, আপনার দরজায়!
+                      </h2>
+
+                      <p>
+                        ফ্রিজ ঠাণ্ডা করছে না? বেশি বরফ জমে যাচ্ছে? কিংবা শুধু সাধারণ সার্ভিসিং দরকার? আমাদের দক্ষ
+                        টেকনিশিয়ানরা দ্রুত, নির্ভরযোগ্য এবং সাশ্রয়ী মূল্যে সমাধান দিচ্ছেন। নিচে আমাদের জনপ্রিয়
+                        সেবাসমূহ ও মূল্য তালিকা দেখুন:
+                      </p>
+
+                      <h3><b><u>মূল্য তালিকা (আনুমানিক):</u></b></h3>
+
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                          <thead class="table-primary">
                             <tr>
-                              <th>Service</th>
-                              <th>Price (৳)</th>
+                              <th>সেবাসমূহ</th>
+                              <th>মূল্য (৳)</th>
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>AC Installation (up to 2 Ton)</td>
-                              <td>৳ 1,500 – ৳ 2,000</td>
+                              <td>সার্ভিসিং</td>
+                              <td>৳ ৪৯৯</td>
                             </tr>
                             <tr>
-                              <td>AC Dismantling</td>
-                              <td>৳ 1,000 – ৳ 1,500</td>
+                              <td>ঠাণ্ডা হয় না</td>
+                              <td>৳ ৭৯৯</td>
                             </tr>
                             <tr>
-                              <td>Installation + Dismantling Combo</td>
-                              <td>৳ 2,200 – ৳ 2,800</td>
+                              <td>ঠাণ্ডা কম হয়</td>
+                              <td>৳ ৭৯৯</td>
                             </tr>
                             <tr>
-                              <td>Extra Copper Pipe (per foot)</td>
-                              <td>৳ 150 – ৳ 200</td>
+                              <td>বেশি বরফ জমে</td>
+                              <td>৳ ৯৯৯</td>
                             </tr>
                             <tr>
-                              <td>Freon Gas Refill</td>
-                              <td>৳ 1,200 – ৳ 1,800</td>
+                              <td>লাইট জ্বলে না</td>
+                              <td>৳ ২০০</td>
+                            </tr>
+                            <tr>
+                              <td>সাধারণ চেকআপ</td>
+                              <td>৳ ২০০</td>
                             </tr>
                           </tbody>
                         </table>
-
-                        <p style="margin-top: 10px;">
-                          <small><i>*Final price may vary depending on AC type, pipe length, location, and complexity of
-                              installation.</i></small>
-                        </p>
-
-                        <p><strong>Need service? Call QuickFix — we’re available nationwide, 24/7!</strong></p>
-
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-                          data-mdb-target="#orderModal" data-mdb-dismiss="modal">Order Now</button>
-                      </div>
+
+                      <p class="mt-3 text-muted">
+                        <small><i>*চূড়ান্ত মূল্য ফ্রিজের ধরণ, সমস্যার ধরন, যন্ত্রাংশের প্রয়োজনীয়তা এবং মেরামতের
+                            জটিলতার উপর নির্ভর করে পরিবর্তিত হতে পারে।</i></small>
+                      </p>
+
+                      <p class="fw-bold mt-4">সেবা প্রয়োজন? কল করুন QuickFix — আমরা সারা বাংলাদেশে, ২৪/৭ প্রস্তুত!
+                      </p>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">বন্ধ করুন</button>
+                      <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                        data-mdb-target="#orderModal" data-mdb-dismiss="modal">অর্ডার করুন</button>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="img/service2.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Repair AC</h5>
-                <p class="card-text">
-                  Available all over Bangladesh with fast, reliable, and expert service — anytime you need us!
-                </p>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
-                  Details
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
-                  aria-hidden="true" style="z-index: 9999999;">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel2">Repair AC</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <h2 class="text-center fw-bold mb-4">
-                          Trusted & Professional AC Repair Services Across Bangladesh
-                        </h2>
-
-                        <p>
-                          QuickFix offers expert <u>AC repair services</u> all over Bangladesh with reliable, fast, and
-                          affordable solutions.
-                          Our skilled technicians use modern tools and quality parts to get your AC running smoothly
-                          again.
-                        </p>
-
-                        <p>
-                          We service all types and brands of AC units (<em>Split AC, Cassette AC, Standing Floor AC,
-                            Central AC</em>),
-                          ensuring thorough diagnosis and repair for both indoor and outdoor units.
-                        </p>
-
-                        <h4 class="mt-4"><b><u>Our AC Repair Services Include:</u></b></h4>
-                        <ul>
-                          <li>Compressor and Motor Repairs</li>
-                          <li>Gas Leak Detection and Freon Recharge (R22 / R32 / R410)</li>
-                          <li>Capacitor and Relay Replacement</li>
-                          <li>Fan and Blower Motor Repair</li>
-                          <li>PCB and Electrical System Troubleshooting</li>
-                          <li>Thermostat and Remote Control Repair</li>
-                          <li>Cleaning and Maintenance as Part of Repair</li>
-                        </ul>
-
-                        <h4 class="mt-4"><b><u>Pricing (Estimated):</u></b></h4>
-                        <div class="table-responsive">
-                          <table class="table table-bordered table-striped">
-                            <thead class="table-primary">
-                              <tr>
-                                <th>Service</th>
-                                <th>Price (৳)</th>
-                                <th>Warranty</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Basic Repair Service</td>
-                                <td>৳ 800 – ৳ 1,200</td>
-                                <td>30 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Compressor Repair/Replacement</td>
-                                <td>৳ 2,000 – ৳ 4,500</td>
-                                <td>30 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Freon Gas Refill</td>
-                                <td>৳ 1,200 – ৳ 1,800</td>
-                                <td>30 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Electrical Parts Replacement</td>
-                                <td>৳ 500 – ৳ 2,000</td>
-                                <td>30 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Fan Motor Repair</td>
-                                <td>৳ 700 – ৳ 1,500</td>
-                                <td>30 Days</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <p class="mt-3 text-muted">
-                          <small><i>*Final cost depends on AC condition and parts required. Warranty applies for repair
-                              services booked through official QuickFix channels.</i></small>
-                        </p>
-
-                        <p class="fw-bold mt-4">Need expert repair? Call QuickFix — available 24/7 nationwide!</p>
-                      </div>
-
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-                          data-mdb-target="#orderModal" data-mdb-dismiss="modal">Order Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="img/service3.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Clean AC</h5>
-                <p class="card-text">
-                  AC feeling weak? Let us clean it strong.
-                </p>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">
-                  Details
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
-                  aria-hidden="true" style="z-index: 9999999;">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel3">Service Cuci AC</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <h2 class="text-center fw-bold mb-4">
-                          Reliable & Thorough AC Cleaning Services Across Bangladesh
-                        </h2>
-
-                        <p>
-                          QuickFix provides expert <u>AC cleaning services</u> nationwide to keep your air conditioner
-                          running efficiently
-                          and maintain healthy indoor air quality.
-                        </p>
-
-                        <p>
-                          We clean all types and brands of AC units (<em>Split AC, Cassette AC, Standing Floor AC,
-                            Central AC</em>),
-                          focusing on both indoor and outdoor units to remove dust, mold, and contaminants.
-                        </p>
-
-                        <h4 class="mt-4"><b><u>Our AC Cleaning Services Include:</u></b></h4>
-                        <ul>
-                          <li>Deep Cleaning of Indoor and Outdoor Units</li>
-                          <li>Filter Cleaning and Replacement</li>
-                          <li>Coil Cleaning</li>
-                          <li>Drain Pipe and Hose Cleaning</li>
-                          <li>Fungus and Mold Removal</li>
-                          <li>Performance and Efficiency Check</li>
-                          <li>Sanitizing and Deodorizing</li>
-                        </ul>
-
-                        <h4 class="mt-4"><b><u>Pricing (Estimated):</u></b></h4>
-                        <div class="table-responsive">
-                          <table class="table table-bordered table-striped">
-                            <thead class="table-primary">
-                              <tr>
-                                <th>Service</th>
-                                <th>Price (৳)</th>
-                                <th>Warranty</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>Basic AC Cleaning</td>
-                                <td>৳ 700 – ৳ 1,000</td>
-                                <td>7 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Deep Cleaning (Coils & Filters)</td>
-                                <td>৳ 1,200 – ৳ 1,800</td>
-                                <td>7 Days</td>
-                              </tr>
-                              <tr>
-                                <td>Sanitizing & Deodorizing</td>
-                                <td>৳ 1,000 – ৳ 1,500</td>
-                                <td>7 Days</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        <p class="mt-3 text-muted">
-                          <small><i>*Prices vary based on AC type and condition. Warranty covers cleaning quality and
-                              customer satisfaction.</i></small>
-                        </p>
-
-                        <p class="fw-bold mt-4">Keep your AC fresh and efficient — call QuickFix anytime, nationwide!
-                        </p>
-                      </div>
-
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
-                          data-mdb-target="#orderModal" data-mdb-dismiss="modal">Order Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- New Order Modal -->
-          <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true"
-            style="z-index: 99999999;">
-            <div class="modal-dialog">
-              <form id="orderForm" class="modal-content" onsubmit="submitOrder(event)">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="orderModalLabel">Place Your Order</h5>
-                  <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="mb-3">
-                    <label for="customerName" class="form-label">Name *</label>
-                    <input type="text" class="form-control" id="customerName" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="customerAddress" class="form-label">Address *</label>
-                    <textarea class="form-control" id="customerAddress" rows="2" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                    <label for="customerPhone" class="form-label">Phone Number *</label>
-                    <input type="tel" class="form-control" id="customerPhone" pattern="[0-9]{10,15}" required />
-                    <div class="form-text">Enter 10 to 15 digits.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="customerEmail" class="form-label">Email *</label>
-                    <input type="email" class="form-control" id="customerEmail" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="serviceSelect" class="form-label">Select Service *</label>
-                    <select class="form-select" id="serviceSelect" multiple required>
-                      <optgroup label="Installation & Dismantling">
-                        <option value="Installation">AC Installation (৳ 1,500 – ৳ 2,000)</option>
-                        <option value="Dismantling">AC Dismantling (৳ 1,000 – ৳ 1,500)</option>
-                        <option value="Combo">Installation + Dismantling Combo (৳ 2,200 – ৳ 2,800)</option>
-                        <option value="CopperPipe">Extra Copper Pipe (per foot) (৳ 150 – ৳ 200)</option>
-                        <option value="Freon">Freon Gas Refill (৳ 1,200 – ৳ 1,800)</option>
-                      </optgroup>
-
-                      <optgroup label="Repair Services">
-                        <option value="BasicRepair">Basic Repair Service (৳ 800 – ৳ 1,200)</option>
-                        <option value="CompressorRepair">Compressor Repair/Replacement (৳ 2,000 – ৳ 4,500)</option>
-                        <option value="FreonRepair">Freon Gas Refill (৳ 1,200 – ৳ 1,800)</option>
-                        <option value="ElectricalRepair">Electrical Parts Replacement (৳ 500 – ৳ 2,000)</option>
-                        <option value="FanMotorRepair">Fan Motor Repair (৳ 700 – ৳ 1,500)</option>
-                      </optgroup>
-
-                      <optgroup label="Cleaning Services">
-                        <option value="BasicCleaning">Basic AC Cleaning (৳ 700 – ৳ 1,000)</option>
-                        <option value="DeepCleaning">Deep Cleaning (Coils & Filters) (৳ 1,200 – ৳ 1,800)</option>
-                        <option value="Sanitizing">Sanitizing & Deodorizing (৳ 1,000 – ৳ 1,500)</option>
-                      </optgroup>
-                    </select>
-
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-success">Submit Order</button>
-                </div>
-              </form>
             </div>
           </div>
         </div>
-      </section>
-      <!--Section: Content-->
 
-      <hr class="my-5" />
-
-      <!--Section: Content-->
-      <!-- <section class="mb-5">
-        <h4 class="mb-5 text-center"><strong>Facilis consequatur eligendi</strong></h4>
-
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-6">
-            <form>
-              <!-- 2 column grid layout with text inputs for the first and last names 
-              <div class="row mb-4">
-                <div class="col">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example1" class="form-control" />
-                    <label class="form-label" for="form3Example1">First name</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-outline">
-                    <input type="text" id="form3Example2" class="form-control" />
-                    <label class="form-label" for="form3Example2">Last name</label>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Email input 
-              <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control" />
-                <label class="form-label" for="form3Example3">Email address</label>
-              </div>
-
-              <!-- Password input 
-              <div class="form-outline mb-4">
-                <input type="password" id="form3Example4" class="form-control" />
-                <label class="form-label" for="form3Example4">Password</label>
-              </div>
-
-              <!-- Checkbox 
-              <div class="form-check d-flex justify-content-center mb-4">
-                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" checked />
-                <label class="form-check-label" for="form2Example3">
-                  Subscribe to our newsletter
-                </label>
-              </div>
-
-              <!-- Submit button 
-              <button type="submit" class="btn btn-primary btn-block mb-4">
-                Sign up
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="img/microoven_service.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">মাইক্রোওভেন সার্ভিসিং</h5>
+              <p class="card-text">
+                মাইক্রোওভেন সার্ভিস ও রিপেয়ার – দ্রুত, নির্ভরযোগ্য এবং সাশ্রয়ী!
+              </p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal3">
+                বিস্তারিত
+              </button>
+              <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#reviewModal">
+                রিভিউ ⭐
               </button>
 
-              <!-- Register buttons 
-              <div class="text-center">
-                <p>or sign up with:</p>
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                  <i class="fab fa-facebook-f"></i>
-                </button>
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                aria-hidden="true" style="z-index: 9999999;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel3">মাইক্রোওভেন সার্ভিসিং</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h2 class="text-center fw-bold mb-4">
+                        🍽️ মাইক্রোওভেন সার্ভিস ও রিপেয়ার – দ্রুত, নির্ভরযোগ্য এবং সাশ্রয়ী!
+                      </h2>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                  <i class="fab fa-google"></i>
-                </button>
+                      <p>
+                        মাইক্রোওভেন গরম করছে না? প্লেট ঘুরছে না? কিংবা শুধুই সাধারণ চেকআপ দরকার? আমাদের অভিজ্ঞ
+                        টেকনিশিয়ানরা সাশ্রয়ী মূল্যে দ্রুত সমাধান দিচ্ছেন, সারা বাংলাদেশে। নিচে আমাদের জনপ্রিয়
+                        সেবাসমূহ ও তাদের মূল্য তালিকা দেখুন:
+                      </p>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                  <i class="fab fa-twitter"></i>
-                </button>
+                      <h3><b><u>মূল্য তালিকা (আনুমানিক):</u></b></h3>
 
-                <button type="button" class="btn btn-primary btn-floating mx-1">
-                  <i class="fab fa-github"></i>
-                </button>
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                          <thead class="table-primary">
+                            <tr>
+                              <th>সেবাসমূহ</th>
+                              <th>মূল্য (৳)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>সার্ভিসিং</td>
+                              <td>৳ ৫০০</td>
+                            </tr>
+                            <tr>
+                              <td>গরম হয় না</td>
+                              <td>৳ ৫০০</td>
+                            </tr>
+                            <tr>
+                              <td>প্লেট ঘোরে না</td>
+                              <td>৳ ৫০০</td>
+                            </tr>
+                            <tr>
+                              <td>লাইন পায় না</td>
+                              <td>৳ ৫০০</td>
+                            </tr>
+                            <tr>
+                              <td>সাধারণ চেকআপ</td>
+                              <td>৳ ৫০০</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <p class="mt-3 text-muted">
+                        <small><i>*চূড়ান্ত মূল্য মাইক্রোওভেনের মডেল, সমস্যার ধরন, যন্ত্রাংশের প্রয়োজনীয়তা এবং
+                            মেরামতের জটিলতার উপর নির্ভর করে পরিবর্তিত হতে পারে।</i></small>
+                      </p>
+
+                      <p class="fw-bold mt-4">সেবা প্রয়োজন? কল করুন QuickFix — আমরা সারা বাংলাদেশে, ২৪/৭ প্রস্তুত!
+                      </p>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">বন্ধ করুন</button>
+                      <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                        data-mdb-target="#orderModal" data-mdb-dismiss="modal">অর্ডার করুন</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img src="img/washing_machine.jpg" class="img-fluid" />
+              <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">ওয়াশিং মেশিন সার্ভিসিং</h5>
+              <p class="card-text">
+                আপনার ওয়াশিং মেশিনের সকল সমস্যা এক সাথে সমাধান, সাশ্রয়ী মূল্যে!
+              </p>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal4">
+                বিস্তারিত
+              </button>
+              <button type="button" class="btn btn-success" data-mdb-toggle="modal" data-mdb-target="#reviewModal">
+                রিভিউ ⭐
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                aria-hidden="true" style="z-index: 9999999;">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel3">ওয়াশিং মেশিন সার্ভিসিং</h5>
+                      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <h2 class="text-center fw-bold mb-4">
+                        🧺 আপনার ওয়াশিং মেশিনের সকল সমস্যা এক সাথে সমাধান, সাশ্রয়ী মূল্যে!
+                      </h2>
+
+                      <p>
+                        আপনার ওয়াশিং মেশিনে লাইন আসে না, পানি আসে না বা যায় না? কাপড়ের সাথে ময়লা আসে বা অস্বাভাবিক
+                        শব্দ করে? এমন সব সমস্যার জন্য আমাদের দক্ষ টেকনিশিয়ানরা রয়েছে প্রস্তুত। আমরা দিচ্ছি
+                        নির্ভরযোগ্য সার্ভিসিং ও সমস্যা সমাধান সারা বাংলাদেশে। নিচে আমাদের জনপ্রিয় সেবাসমূহ ও মূল্য
+                        তালিকা দেখুন:
+                      </p>
+
+                      <h3><b><u>মূল্য তালিকা (আনুমানিক):</u></b></h3>
+
+                      <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                          <thead class="table-primary">
+                            <tr>
+                              <th>সেবাসমূহ</th>
+                              <th>মূল্য (৳)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>সার্ভিসিং</td>
+                              <td>৳ </td>
+                            </tr>
+                            <tr>
+                              <td>লাইন আসে না</td>
+                              <td>৳ </td>
+                            </tr>
+                            <tr>
+                              <td>পানি আসে না</td>
+                              <td>৳ </td>
+                            </tr>
+                            <tr>
+                              <td>পানি যায় না</td>
+                              <td>৳ </td>
+                            </tr>
+                            <tr>
+                              <td>কাপড়ের সাথে ময়লা আসে</td>
+                              <td>৳ </td>
+                            </tr>
+                            <tr>
+                              <td>শব্দ করে</td>
+                              <td>৳</td>
+                            </tr>
+                            <tr>
+                              <td>সাধারণ চেকআপ</td>
+                              <td>৳ </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <p class="mt-3 text-muted">
+                        <small><i>*চূড়ান্ত মূল্য মেশিনের ধরণ, লোড ক্ষমতা, সমস্যার ধরন এবং যন্ত্রাংশের প্রয়োজনীয়তার
+                            উপর নির্ভর করে পরিবর্তিত হতে পারে।</i></small>
+                      </p>
+
+                      <p class="fw-bold mt-4">সেবা প্রয়োজন? কল করুন QuickFix — আমরা সারা বাংলাদেশে, ২৪/৭ প্রস্তুত!
+                      </p>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">বন্ধ করুন</button>
+                      <button type="button" class="btn btn-primary" data-mdb-toggle="modal"
+                        data-mdb-target="#orderModal" data-mdb-dismiss="modal">অর্ডার করুন</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- New Order Modal -->
+        <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true"
+          style="z-index: 99999999;">
+          <div class="modal-dialog">
+            <form id="orderForm" class="modal-content" onsubmit="submitOrder(event)">
+              <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">অর্ডার করুন</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="customerName" class="form-label">নাম *</label>
+                  <input type="text" class="form-control" id="customerName" required />
+                </div>
+                <div class="mb-3">
+                  <label for="customerAddress" class="form-label">ঠিকানা *</label>
+                  <textarea class="form-control" id="customerAddress" rows="2" required></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="customerPhone" class="form-label">ফোন নম্বর *</label>
+                  <input type="tel" class="form-control" id="customerPhone" pattern="[0-9]{10,15}" required />
+                </div>
+                <div class="mb-3">
+                  <label for="serviceSelect" class="form-label">সার্ভিস বাছাই করুন *</label>
+                  <select class="form-select" id="serviceSelect" multiple required>
+
+                    <optgroup label="এ সি সার্ভিসিং (AC Services)">
+                      <option value="AC_Serving">সার্ভিসিং (৳ ৮০০ – ৳ ১,০০০)</option>
+                      <option value="AC_GasCharge">গ্যাস চার্জ (৳ ১,২০০ – ৳ ২,৬০০)</option>
+                      <option value="AC_LeakRepair">লিকেজ রিপেয়ার (৳ ১,৯৯৯)</option>
+                      <option value="AC_OpenFitting">খোলা + ফিটিং (৳ ২,৯৯৯)</option>
+                      <option value="AC_Checkup">সাধারণ চেকআপ (৳ ১৪৯)</option>
+                      <option value="AC_CompressorReplace">কম্প্রেসর রিপ্লেস (৳ ২,৯৯৯)</option>
+                    </optgroup>
+
+                    <optgroup label="ফ্রিজ সার্ভিস (Freezer Services)">
+                      <option value="Freezer_Serving">সার্ভিসিং (৳ ৪৯৯)</option>
+                      <option value="Freezer_NotCooling">ঠাণ্ডা হয় না (৳ ৭৯৯)</option>
+                      <option value="Freezer_LessCooling">ঠাণ্ডা কম হয় (৳ ৭৯৯)</option>
+                      <option value="Freezer_ExcessIce">বেশি বরফ জমে (৳ ৯৯৯)</option>
+                      <option value="Freezer_LightNotOn">লাইট জ্বলে না (৳ ২০০)</option>
+                      <option value="Freezer_Checkup">সাধারণ চেকআপ (৳ ২০০)</option>
+                    </optgroup>
+
+                    <optgroup label="ওয়াশিং মেশিন সার্ভিস (Washing Machine Services)">
+                      <option value="WM_Serving">সার্ভিসিং (৳ ৫০০)</option>
+                      <option value="WM_NotHeating">গরম হয় না (৳ ৫০০)</option>
+                      <option value="WM_PlateNotTurning">প্লেট ঘোরে না (৳ ৫০০)</option>
+                      <option value="WM_NoLine">লাইন পায় না (৳ ৫০০)</option>
+                      <option value="WM_Checkup">সাধারণ চেকআপ (৳ ৫০০)</option>
+                    </optgroup>
+
+                    <optgroup label="মাইক্রোওভেন সার্ভিস (Microwave Services)">
+                      <option value="MW_Serving">সার্ভিসিং (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_NoLine">লাইন আসে না (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_NoWater">পানি আসে না (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_NoWaterOut">পানি যায় না (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_DirtyCloth">কাপড়ের সাথে ময়লা আসে (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_Noise">শব্দ করে (মূল্য পরে জানানো হবে)</option>
+                      <option value="MW_Checkup">সাধারণ চেকআপ (মূল্য পরে জানানো হবে)</option>
+                    </optgroup>
+
+                  </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">বন্ধ করুন</button>
+                <button type="submit" class="btn btn-success">অর্ডার নিশ্চিত করুন</button>
               </div>
             </form>
           </div>
         </div>
-      </section> -->
-      <!--Section: Content-->
+        <!-- Review Modal -->
+        <!-- Review Modal -->
+        <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true"
+          style="z-index: 99999999;">
+          <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">সেবা ভিত্তিক রিভিউসমূহ</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <!-- AC Reviews -->
+                <h6>AC সার্ভিস</h6>
+                <div id="acReviews" class="mb-3">
+                  <p><strong>রাহুল:</strong> খুব ভালো সার্ভিস, ধন্যবাদ! <br> রেটিং: ⭐⭐⭐⭐⭐ (5/5)</p>
+                  <hr>
+                </div>
+
+                <!-- Freezer Reviews -->
+                <h6>ফ্রিজ সার্ভিস</h6>
+                <div id="freezerReviews" class="mb-3">
+                  <p><strong>সাবিলা:</strong> সময়মতো কাজ করেছে, খুশি হয়েছি। <br> রেটিং: ⭐⭐⭐⭐ (4/5)</p>
+                  <hr>
+                </div>
+
+                <!-- Washing Machine Reviews -->
+                <h6>ওয়াশিং মেশিন সার্ভিস</h6>
+                <div id="wmReviews" class="mb-3">
+                  <p>কোনো রিভিউ নেই।</p>
+                  <hr>
+                </div>
+
+                <!-- Microwave Reviews -->
+                <h6>মাইক্রোওভেন সার্ভিস</h6>
+                <div id="mwReviews" class="mb-3">
+                  <p>কোনো রিভিউ নেই।</p>
+                  <hr>
+                </div>
+
+                <hr>
+
+                <!-- Submit Review Form -->
+                <form id="reviewForm">
+                  <div class="mb-3">
+                    <label for="serviceType" class="form-label">সেবা নির্বাচন করুন *</label>
+                    <select class="form-select" id="serviceType" required>
+                      <option value="" disabled selected>সেবা নির্বাচন করুন</option>
+                      <option value="ac">এ সি সার্ভিসিং</option>
+                      <option value="freezer">ফ্রিজ সার্ভিস</option>
+                      <option value="washing_machine">ওয়াশিং মেশিন সার্ভিস</option>
+                      <option value="microwave">মাইক্রোওভেন সার্ভিস</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="userName" class="form-label">আপনার নাম</label>
+                    <input type="text" class="form-control" id="userName" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="userReview" class="form-label">আপনার রিভিউ লিখুন</label>
+                    <textarea class="form-control" id="userReview" rows="3" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">রেটিং দিন</label>
+                    <select class="form-select" id="userRating" required>
+                      <option value="" disabled selected>রেটিং নির্বাচন করুন</option>
+                      <option value="5">⭐⭐⭐⭐⭐</option>
+                      <option value="4">⭐⭐⭐⭐</option>
+                      <option value="3">⭐⭐⭐</option>
+                      <option value="2">⭐⭐</option>
+                      <option value="1">⭐</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">সাবমিট করুন</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <hr class="my-5" />
     </div>
   </main>
   <!--Main layout-->
-  <section class="text-center" id="contact">
-    <h4 class="mb-5"><strong>CONTACT</strong></h4>
-    <div class="container">
-      <div class="row">
-        <div class="col-md">
-          <div class="contact-grid1">
-            <img src="img/contact.jpg" width="300" height="210">
-            <br>
-            <span style="font-weight: bold;">quickfix@nai.com</span>
-            <p></p>
-            <span style="font-weight: bold;">+880-XXXXXX-XXXX</span>
-            <p>Feel free to give us a call.</p>
-            <span style="font-weight: bold;">Head Office</span>
-            <p>House #0X, Mohakhali,
-              Dhaka, Bangladesh</p>
-          </div>
-
-        </div>
-        <div class="col-md">
-          <form action="" class="contact-form" id="contact-form">
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                  <input type="text" id="first_name" class="form-control" />
-                  <label class="form-label" for="form6Example1">First name</label>
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                  <input type="text" id="last_name" class="form-control" />
-                  <label class="form-label" for="form6Example2">Last name</label>
-                </div>
-              </div>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="company_name" class="form-control" />
-              <label class="form-label" for="form6Example3">Company name</label>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="address" class="form-control" />
-              <label class="form-label" for="form6Example4">Address</label>
-            </div>
-
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" />
-              <label class="form-label" for="form6Example5">Email</label>
-            </div>
-
-            <!-- Number input -->
-            <div class="form-outline mb-4">
-              <input type="number" id="phone" class="form-control" />
-              <label class="form-label" for="form6Example6">Phone</label>
-            </div>
-
-            <!-- Message input -->
-            <div class="form-outline mb-4">
-              <textarea class="form-control" id="message" rows="4"></textarea>
-              <label class="form-label" for="form6Example7">Message</label>
-            </div>
-
-            <!-- Submit button -->
-            <button type="submit" value="Send" id="send-btn" class="btn btn-primary btn-block mb-4">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!--Footer-->
   <footer class="text-center text-lg-start">
     <!-- Section: Social media -->
     <section class="d-flex justify-content-center justify-content-lg-between ">
-      <!-- Left -->
-      <!-- <div class="me-5 d-none d-lg-block">
-        <span>Get connected with us on social networks:</span>
-      </div> -->
-      <!-- Left -->
-
-      <!-- Right -->
-      <!-- <div>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-twitter"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-google"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="" class="me-4 text-reset">
-          <i class="fab fa-github"></i>
-        </a>
-      </div> -->
-      <!-- Right -->
-      <!-- Section: Social media -->
-
       <!-- Section: Links  -->
       <div class="container text-center text-md-start mt-5">
         <!-- Grid row -->
@@ -1047,22 +1035,23 @@
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-star"></i> QuickFix
+              <i class="fas fa-star"></i> সহজে সমাধান
             </h6>
             <p>
-              QuickFix is a business engaged in the field of AC service, washing, dismantling and installation in the
-              Jakarta area and its surroundings.
+              সহজে সমাধান আপনার AC, ফ্রিজ, ওয়াশিং মেশিন এবং মাইক্রোওভেনের দ্রুত ও বিশ্বস্ত সার্ভিস প্রদান করে।
+              আমাদের দক্ষ টেকনিশিয়ানরা গুণগতমানের সেবা দিয়ে আপনার যন্ত্রপাতি দীর্ঘস্থায়ী করে তোলেন।
+            </p>
+            <p class="text-center py-3">
+              &copy; ২০২৫ সহজে সমাধান. সর্বস্বত্ব সংরক্ষিত।
             </p>
           </div>
-          <!-- Grid column -->
-
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <div class="ratio ratio-1x1">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.052172809779!2d90.3980810503495!3d23.779577695759702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c77055555555%3A0xcfb6cac3eb68c145!2sMohakhali%20Kacha%20Bazar!5e1!3m2!1sen!2sbd!4v1751657133378!5m2!1sen!2sbd"
-                frameborder="0" style="border: 0; width: 240px; height: 250px;" allowfullscreen></iframe>
+                frameborder="0" style="border: 0; width: 200px; height: 200px;" allowfullscreen></iframe>
             </div>
           </div>
           <!-- Grid column -->
@@ -1071,27 +1060,24 @@
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
+              প্রয়োজনীয় লিঙ্ক
             </h6>
             <p>
-              <a href="#" class="text-reset">Home</a>
+              <a href="#" class="text-reset">হোম</a>
             </p>
             <p>
-              <a href="#about" class="text-reset">About</a>
+              <a href="#about" class="text-reset">সহজে সমাধান সম্পর্কে</a>
             </p>
             <p>
-              <a href="#service" class="text-reset">Service</a>
+              <a class="text-reset" href="#ourteam">আমাদের টেকনিশিয়ান</a>
             </p>
             <p>
-              <a href="#adminLoginModal" data-bs-toggle="modal" class="text-reset">Admin</a>
+              <a href="#service" class="text-reset">সেবাসমূহ
             </p>
-
             <p>
-              <a href="#contact" class="text-reset">Contact</a>
+              <a href="#adminLoginModal" data-bs-toggle="modal" class="text-reset">এডমিন</a>
             </p>
           </div>
-          <!-- Grid column -->
-
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
@@ -1268,6 +1254,13 @@
       setLanguage(savedLang);
     };
 
+    function showService() {
+      const serviceSection = document.getElementById('service');
+      if (serviceSection.style.display === 'none' || getComputedStyle(serviceSection).display === 'none') {
+        serviceSection.style.display = 'block';  // or 'flex', depending on your styling
+      }
+      serviceSection.scrollIntoView({ behavior: 'smooth' });
+    }
     function searchLocation() {
       const location = document.getElementById('locationInput').value.trim();
       if (location !== '') {
@@ -1333,6 +1326,48 @@
         alert('Invalid username or password.');
       }
     }
+  </script>
+  <script>
+    const reviewForm = document.getElementById('reviewForm');
+
+    reviewForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const serviceType = document.getElementById('serviceType').value;
+      const name = document.getElementById('userName').value.trim();
+      const review = document.getElementById('userReview').value.trim();
+      const rating = document.getElementById('userRating').value;
+
+      if (serviceType && name && review && rating) {
+        // Create new review paragraph
+        const newReview = document.createElement('p');
+        newReview.innerHTML = `<strong>${name}:</strong> ${review} <br> রেটিং: ${'⭐'.repeat(rating)} (${rating}/5)`;
+
+        // Find correct review container
+        let reviewContainer;
+        switch (serviceType) {
+          case 'ac': reviewContainer = document.getElementById('acReviews'); break;
+          case 'freezer': reviewContainer = document.getElementById('freezerReviews'); break;
+          case 'washing_machine': reviewContainer = document.getElementById('wmReviews'); break;
+          case 'microwave': reviewContainer = document.getElementById('mwReviews'); break;
+        }
+
+        // Remove "No reviews" text if present
+        if (reviewContainer.innerText.includes('কোনো রিভিউ নেই।')) {
+          reviewContainer.innerHTML = '';
+        }
+
+        // Append review and separator
+        reviewContainer.appendChild(newReview);
+        reviewContainer.appendChild(document.createElement('hr'));
+
+        // Reset form
+        reviewForm.reset();
+        alert('ধন্যবাদ আপনার রিভিউ দেওয়ার জন্য!');
+      } else {
+        alert('অনুগ্রহ করে সকল তথ্য পূরণ করুন।');
+      }
+    });
   </script>
 
 </body>
