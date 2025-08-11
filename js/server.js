@@ -219,6 +219,46 @@ app.delete('/api2/delete_orders/:id', async (req, res) => {
   }
 });
 
+// GET all orders
+app.get('/api/reviews', async (req, res) => {
+   try {
+    const pool = await sql.connect(process.env.DB_CONN);
+    const result = await pool.request().query(`
+      SELECT service, customer_name, review, rating
+      FROM reviews
+      ORDER BY id DESC
+    `);
+    res.json(result.recordset);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Server error");
+  }
+});
+
+// POST new review
+app.post('/api/save_reviews', async (req, res) => {
+  const { service, customer_name, review, rating } = req.body;
+
+  if (!service || !customer_name || !review || !rating) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  try {
+    // Connect to DB
+    await sql.connect(config);
+
+    // Insert query, created_at will be auto set by DB default
+    const result = await sql.query`
+      INSERT INTO reviews (service, customer_name, review, rating)
+      VALUES (${service}, ${customer_name}, ${review}, ${rating});
+    `;
+
+    res.status(201).json({ message: 'Review added successfully' });
+  } catch (err) {
+    console.error('DB Error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
