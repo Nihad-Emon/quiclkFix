@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Admin Panel - QuickFix</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel - সহজে সমাধান</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- Bootstrap 5 JS Bundle (includes Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     body {
@@ -20,18 +23,18 @@
     }
 
     .navbar {
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .summary-card {
       background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       transition: 0.3s;
     }
 
     .summary-card:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     .summary-card h5 {
@@ -54,165 +57,201 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .table-wrapper {
       background-color: #fff;
       border-radius: 12px;
       padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Navbar -->
   <nav class="navbar navbar-dark bg-dark mb-4">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0 h1">QuickFix Admin Panel</span>
+      <span class="navbar-brand mb-0 h1">সহজে সমাধান Admin Panel</span>
       <button class="btn btn-danger" onclick="logout()">Logout</button>
     </div>
   </nav>
 
   <div class="container">
-
-    <!-- Chart Overview -->
-    <div class="mb-5 chart-wrapper text-center">
-      <h4 class="mb-3">Order Overview</h4>
-      <canvas id="orderChart" height="200"></canvas>
-    </div>
-
     <!-- Summary Cards -->
-    <div class="row g-3 mb-4">
-      <div class="col-md-4">
-        <div class="summary-card p-4 border-start border-success border-5">
-          <h5>Total Orders</h5>
-          <p class="fs-4 fw-bold text-dark" id="totalOrders">30</p>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="mb-5 chart-wrapper text-center">
+          <h4 class="mb-3">অর্ডার চার্ট</h4>
+          <canvas id="orderChart" height="200"></canvas>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="summary-card p-4 border-start border-warning border-5">
-          <h5>Pending Orders</h5>
-          <p class="fs-4 fw-bold text-warning" id="pendingOrders">5</p>
+      <div class="col-md-7">
+        <div class="row mb-3">
+          <div class="col-md-4">
+            <div class="summary-card p-4 border-start border-success border-5">
+              <h5>মোট</h5>
+              <p class="fs-4 fw-bold text-dark" id="totalOrders">0</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="summary-card p-4 border-start border-success border-5">
+              <h5>সম্পন্ন</h5>
+              <p class="fs-4 fw-bold text-success" id="completedOrders">0</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="summary-card p-4 border-start border-warning border-5">
+              <h5>পেন্ডিং</h5>
+              <p class="fs-4 fw-bold text-warning" id="pendingOrders">0</p>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-1">
+          <div class="col-lg-12">
+            <div class="summary-card p-4 border-start border-primary border-5 mb-4">
+              <h5>আজকের মোট ইনকাম <span id="currentDateBangla"></span></h5>
+              <p class="fs-4 fw-bold text-primary" id="dailyIncome">৳ 0</p>
+            </div>
+
+          </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="summary-card p-4 border-start border-success border-5">
-          <h5>Completed Orders</h5>
-          <p class="fs-4 fw-bold text-success" id="completedOrders">22</p>
+
+      <!-- Order Management Section -->
+      <div class="table-wrapper mb-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="mb-0">অর্ডার ম্যানেজ করুন</h4>
+          <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">+ নতুন অর্ডার</button>
+        </div>
+
+        <table class="table table-striped table-bordered align-middle">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>কাস্টমারের নাম</th>
+              <th>ঠিকানা</th>
+              <th>ফোন</th>
+              <th>সেবাসমূহ</th>
+              <th>Status</th>
+              <th>তারিখ</th>
+              <th>Assigned Person</th>
+              <th>Income</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="orderTable"></tbody>
+        </table>
+      </div>
+
+      <!-- Modal for Add/Edit -->
+      <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <form id="orderForm" class="modal-content" onsubmit="handleSubmit(event)">
+            <div class="modal-header">
+              <h5 class="modal-title" id="orderModalLabel">অর্ডার ম্যানেজমেন্ট</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <input type="hidden" id="editIndex" />
+
+              <div class="mb-3">
+                <label class="form-label">কাস্টমারের নাম</label>
+                <input type="text" class="form-control" id="customerName" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">ঠিকানা</label>
+                <textarea class="form-control" id="customerAddress" rows="2" required></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">ফোন</label>
+                <input type="tel" class="form-control" id="customerPhone" required />
+              </div>
+
+              <div class="mb-3">
+                <label for="serviceSelect" class="form-label">সার্ভিস বাছাই করুন *</label>
+                <select class="form-select" id="serviceSelect" multiple required>
+                  <optgroup label="AC সার্ভিসিং">
+                    <option value="সার্ভিসিং">সার্ভিসিং (৳ ৮০০ – ৳ ১,০০০)</option>
+                    <option value="গ্যাস চার্জ">গ্যাস চার্জ (৳ ১,২০০ – ৳ ২,৬০০)</option>
+                    <option value="লিকেজ রিপেয়ার">লিকেজ রিপেয়ার (৳ ১,৯৯৯)</option>
+                    <option value="খোলা + ফিটিং ">খোলা + ফিটিং (৳ ২,৯৯৯)</option>
+                    <option value="সাধারণ চেকআপ">সাধারণ চেকআপ (৳ ১৪৯)</option>
+                    <option value="কম্প্রেসর রিপ্লেস">কম্প্রেসর রিপ্লেস (৳ ২,৯৯৯)</option>
+                  </optgroup>
+                  <optgroup label="ফ্রিজ সার্ভিস">
+                    <option value="সার্ভিসিং">সার্ভিসিং (৳ ৪৯৯)</option>
+                    <option value="ঠাণ্ডা হয় না">ঠাণ্ডা হয় না (৳ ৭৯৯)</option>
+                    <option value="ঠাণ্ডা কম হয় ">ঠাণ্ডা কম হয় (৳ ৭৯৯)</option>
+                    <option value="বেশি বরফ জমে">বেশি বরফ জমে (৳ ৯৯৯)</option>
+                    <option value="লাইট জ্বলে না">লাইট জ্বলে না (৳ ২০০)</option>
+                    <option value="সাধারণ চেকআপ ">সাধারণ চেকআপ (৳ ২০০)</option>
+                  </optgroup>
+                  <optgroup label="ওয়াশিং মেশিন সার্ভিস">
+                    <option value="সার্ভিসিং">সার্ভিসিং (৳ ৫০০)</option>
+                    <option value="গরম হয় না ">গরম হয় না (৳ ৫০০)</option>
+                    <option value="প্লেট ঘোরে না">প্লেট ঘোরে না (৳ ৫০০)</option>
+                    <option value="লাইন পায় না ">লাইন পায় না (৳ ৫০০)</option>
+                    <option value="সাধারণ চেকআপ">সাধারণ চেকআপ (৳ ৫০০)</option>
+                  </optgroup>
+                  <optgroup label="মাইক্রোওভেন সার্ভিস">
+                    <option value="সার্ভিসিং">সার্ভিসিং (মূল্য পরে জানানো হবে)</option>
+                    <option value="লাইন আসে না">লাইন আসে না (মূল্য পরে জানানো হবে)</option>
+                    <option value="পানি আসে না">পানি আসে না (মূল্য পরে জানানো হবে)</option>
+                    <option value="পানি যায় না">পানি যায় না (মূল্য পরে জানানো হবে)</option>
+                    <option value="কাপড়ের সাথে ময়লা আসে">কাপড়ের সাথে ময়লা আসে (মূল্য পরে জানানো হবে)</option>
+                    <option value="শব্দ করে ">শব্দ করে (মূল্য পরে জানানো হবে)</option>
+                    <option value="সাধারণ চেকআপ">সাধারণ চেকআপ (মূল্য পরে জানানো হবে)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-select" id="customerStatus" required>
+                  <option value="Pending">Pending</option>
+                  <option value="Completed">Completed</option>
+                  <option value="Cancelled">Cancelled</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">তারিখ</label>
+                <input type="date" class="form-control" id="customerDate" required />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Assign Person</label>
+                <select class="form-select" id="assignedPerson" multiple required>
+                  <option value="Md. Adib">Md. Adib</option>
+                  <option value="Md. Zabed">Md. Zabed</option>
+                  <option value="Md. Khabib">Md. Khabib</option>
+                  <option value="Md. Sayem">Md. Sayem</option>
+                  <option value="Md. Kamal">Md. Kamal</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Income (৳)</label>
+                <input type="number" step="0.01" min="0" class="form-control" id="income" required />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">বাদ দিন</button>
+              <button type="submit" class="btn btn-primary">সেভ করুন</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-
-    <!-- Order Management Section -->
-<div class="table-wrapper mb-5">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">Manage Orders</h4>
-    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#orderModal">+ Add Order</button>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Customer</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>Service</th>
-        <th>Status</th>
-        <th>Date</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="orderTable"></tbody>
-  </table>
-</div>
-
-<!-- Modal for Add/Edit -->
-<div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form id="orderForm" class="modal-content" onsubmit="handleSubmit(event)">
-      <div class="modal-header">
-        <h5 class="modal-title" id="orderModalLabel">Add/Edit Order</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="editIndex" />
-        
-        <div class="mb-3">
-          <label class="form-label">Customer Name</label>
-          <input type="text" class="form-control" id="customerName" required />
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Address</label>
-          <textarea class="form-control" id="customerAddress" rows="2" required></textarea>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Phone</label>
-          <input type="tel" class="form-control" id="customerPhone" required />
-        </div>
-        <div class="mb-3">
-  <label class="form-label">Service</label>
-  <select class="form-select" id="customerService" multiple required>
-    <optgroup label="Installation & Dismantling">
-      <option value="Installation">AC Installation (৳ 1,500 – ৳ 2,000)</option>
-      <option value="Dismantling">AC Dismantling (৳ 1,000 – ৳ 1,500)</option>
-      <option value="Combo">Installation + Dismantling Combo (৳ 2,200 – ৳ 2,800)</option>
-      <option value="CopperPipe">Extra Copper Pipe (per foot) (৳ 150 – ৳ 200)</option>
-      <option value="Freon">Freon Gas Refill (৳ 1,200 – ৳ 1,800)</option>
-    </optgroup>
-
-    <optgroup label="Repair Services">
-      <option value="BasicRepair">Basic Repair Service (৳ 800 – ৳ 1,200)</option>
-      <option value="CompressorRepair">Compressor Repair/Replacement (৳ 2,000 – ৳ 4,500)</option>
-      <option value="FreonRepair">Freon Gas Refill (৳ 1,200 – ৳ 1,800)</option>
-      <option value="ElectricalRepair">Electrical Parts Replacement (৳ 500 – ৳ 2,000)</option>
-      <option value="FanMotorRepair">Fan Motor Repair (৳ 700 – ৳ 1,500)</option>
-    </optgroup>
-
-    <optgroup label="Cleaning Services">
-      <option value="BasicCleaning">Basic AC Cleaning (৳ 700 – ৳ 1,000)</option>
-      <option value="DeepCleaning">Deep Cleaning (Coils & Filters) (৳ 1,200 – ৳ 1,800)</option>
-      <option value="Sanitizing">Sanitizing & Deodorizing (৳ 1,000 – ৳ 1,500)</option>
-    </optgroup>
-  </select>
-</div>
-
-        <div class="mb-3">
-          <label class="form-label">Status</label>
-          <select class="form-select" id="customerStatus" required>
-            <option value="Pending">Pending</option>
-            <option value="Completed">Completed</option>
-            <option value="Cancelled">Cancelled</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Date</label>
-          <input type="date" class="form-control" id="customerDate" required />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="submit" class="btn btn-primary">Save Order</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-
-
-    <!-- Placeholder -->
-    <div class="table-wrapper">
-      <h4>Customer Management</h4>
-      <p class="text-muted">Coming soon: list of registered customers, ratings, feedback, etc.</p>
-    </div>
-  </div>
-
-  <!-- Chart Script -->
   <script>
+    // Redirect to login page if not logged in as admin
     if (sessionStorage.getItem('isAdminLoggedIn') !== 'true') {
       window.location.href = 'index.html';
     }
@@ -223,163 +262,328 @@
       window.location.href = "index.html";
     }
 
-    const orderData = {
-      labels: ['Pending', 'Completed', 'Cancelled'],
-      datasets: [{
-        data: [5, 22, 3],
-        backgroundColor: ['#ffc107', '#198754', '#dc3545'],
-        hoverOffset: 8
-      }]
-    };
+    let orders = []; // Local cache of orders
+    const backendUrl = 'http://localhost:5000'; // backend base URL
 
-    new Chart(document.getElementById('orderChart'), {
-      type: 'doughnut',
-      data: orderData,
-      options: {
-        plugins: {
-          legend: {
-            position: 'bottom'
-          }
-        }
+    // Fetch orders from backend API
+    async function loadOrdersFromDB() {
+      try {
+        const res = await fetch(`${backendUrl}/api/orders`);
+        if (!res.ok) throw new Error('Failed to fetch orders');
+        const data = await res.json();
+
+        // Map backend keys to frontend keys (adjust if your backend keys differ)
+        orders = data.map(order => ({
+          id: order.id, // make sure your backend returns id!
+          customer_name: order.customer_name || '',
+          address: order.address || '',
+          phone: order.phone || '',
+          service: order.service ? order.service.split(',').map(s => s.trim()) : [],
+          status: order.status || 'Pending',
+          date: order.date ? order.date.split('T')[0] : '',
+          assigned_person: order.assigned_person ? order.assigned_person.split(',').map(s => s.trim()) : [],
+          income: parseFloat(order.income) || 0
+        }));
+
+        renderOrders();
+        updateSummary();
+        renderChart();
+      } catch (error) {
+        console.error('Error loading orders:', error);
       }
+    }
+
+    // Render orders in table
+    function renderOrders() {
+      const tbody = document.getElementById("orderTable");
+      tbody.innerHTML = "";
+
+      orders.forEach((order, index) => {
+        const serviceText = Array.isArray(order.service) ? order.service.join(", ") : order.service;
+        const assignedPersonsText = Array.isArray(order.assigned_person) ? order.assigned_person.join(", ") : (order.assigned_person || "");
+
+        tbody.innerHTML += `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${order.customer_name}</td>
+          <td>${order.address || ""}</td>
+          <td>${order.phone}</td>
+          <td>${serviceText
+            .split(',')
+            .map((item, i) => `${i + 1}. ${item.trim()}`)
+            .join('<br>')
+          }</td>
+
+          <td><span class="badge bg-${getStatusColor(order.status)}">${order.status}</span></td>
+          <td>${order.date}</td>
+          <td>${assignedPersonsText}</td>
+          <td>৳ ${order.income
+            .toFixed(2)
+            .replace(/\d/g, d => ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'][d])
+          }</td>
+
+          <td>
+  <button class="btn btn-sm btn-primary" onclick="editOrder(${index})" title="Edit">
+    <i class="fas fa-edit"></i>
+  </button>
+  <button class="btn btn-sm btn-danger" onclick="deleteOrder(${order.id})" title="Delete">
+    <i class="fas fa-trash-alt"></i>
+  </button>
+</td>
+        </tr>
+      `;
+      });
+    }
+
+    // Return Bootstrap color class based on status
+    function getStatusColor(status) {
+      switch (status) {
+        case "Pending": return "warning";
+        case "Completed": return "success";
+        case "Cancelled": return "danger";
+        default: return "secondary";
+      }
+    }
+
+    // Handle form submission for Add/Edit
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      const serviceSelect = document.getElementById("serviceSelect");
+      // Map selected options to "optionValue (parentLabel)"
+      const selectedServices = Array.from(serviceSelect.selectedOptions).map(opt => {
+        const parentLabel = opt.parentElement?.label || "";
+        const optionValue = opt.value;
+        return parentLabel ? `${optionValue} (${parentLabel})` : optionValue;
+      });
+
+      const assignedPersonSelect = document.getElementById("assignedPerson");
+      const assignedPersons = Array.from(assignedPersonSelect.selectedOptions).map(opt => opt.value);
+
+      const index = document.getElementById("editIndex").value;
+
+      const orderData = {
+        customer_name: document.getElementById("customerName").value.trim(),
+        address: document.getElementById("customerAddress").value.trim(),
+        phone: document.getElementById("customerPhone").value.trim(),
+        service: selectedServices,  // <-- updated here
+        status: document.getElementById("customerStatus").value,
+        date: document.getElementById("customerDate").value,
+        assigned_person: assignedPersons,
+        income: parseFloat(document.getElementById("income").value) || 0
+      };
+
+      try {
+        if (index === "") {
+          // Create new order (POST)
+          const res = await fetch(`${backendUrl}/api/add_orders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+          });
+          if (!res.ok) throw new Error('Failed to create order');
+          alert('Order created successfully');
+        } else {
+          // Update existing order (PUT)
+          const id = orders[index].id;
+          const res = await fetch(`${backendUrl}/api/update_orders/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(orderData)
+          });
+          if (!res.ok) throw new Error('Failed to update order');
+          alert('Order updated successfully');
+        }
+
+        // After create/update, reload orders from server
+        await loadOrdersFromDB();
+
+        // Hide modal and reset form
+        const modalEl = document.getElementById("orderModal");
+        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+        if (modalInstance) modalInstance.hide();
+        document.getElementById("orderForm").reset();
+        document.getElementById("editIndex").value = "";
+      } catch (error) {
+        console.error(error);
+        alert(error.message);
+      }
+    }
+
+    // Edit an order: populate modal with order data
+    function editOrder(index) {
+      const order = orders[index];
+      document.getElementById("editIndex").value = index;
+      document.getElementById("customerName").value = order.customer_name;
+      document.getElementById("customerAddress").value = order.address || "";
+      document.getElementById("customerPhone").value = order.phone;
+
+      const serviceSelect = document.getElementById("serviceSelect");
+      Array.from(serviceSelect.options).forEach(option => option.selected = false);
+
+      if (Array.isArray(order.service)) {
+        order.service.forEach(svc => {
+          // Parse svc into option value and parent label
+          const matches = svc.match(/^(.+?) \((.+)\)$/);
+          if (matches) {
+            const optionValue = matches[1].trim();   // before parenthesis
+            const parentLabel = matches[2].trim();   // inside parenthesis
+
+            // Find the option matching both value and parent optgroup label
+            const opt = Array.from(serviceSelect.options).find(o =>
+              o.value === optionValue &&
+              o.parentElement?.label === parentLabel
+            );
+            if (opt) opt.selected = true;
+          }
+        });
+      }
+
+
+      document.getElementById("customerStatus").value = order.status;
+      document.getElementById("customerDate").value = order.date;
+
+      const assignedPersonSelect = document.getElementById("assignedPerson");
+      Array.from(assignedPersonSelect.options).forEach(option => option.selected = false);
+      if (Array.isArray(order.assigned_person)) {
+        order.assigned_person.forEach(person => {
+          const opt = Array.from(assignedPersonSelect.options).find(o => o.value === person);
+          if (opt) opt.selected = true;
+        });
+      }
+
+      document.getElementById("income").value = order.income || 0;
+
+      new bootstrap.Modal(document.getElementById("orderModal")).show();
+    }
+
+    // Delete an order by id
+    async function deleteOrder(id) {
+      if (!confirm("Are you sure you want to delete this order?")) return;
+
+      try {
+        const response = await fetch(`${backendUrl}/api2/delete_orders/${id}`, {
+          method: 'DELETE'
+        });
+
+        // Log the entire response for debugging
+        console.log('Delete response:', response);
+
+        if (!response.ok) {
+          let errorMessage = 'Failed to delete order';
+
+          // Try to parse JSON error message if available
+          try {
+            const errorData = await response.json();
+            if (errorData.error) errorMessage = errorData.error;
+          } catch {
+            // Ignore JSON parsing errors
+          }
+
+          throw new Error(errorMessage);
+        }
+
+        alert('Order deleted successfully');
+        await loadOrdersFromDB();
+        // Optionally reload orders here
+      } catch (error) {
+        console.error('Delete error:', error);
+        alert('Failed to delete order: ' + error.message);
+      }
+    }
+
+
+
+
+    // Update summary cards (total orders, completed, pending, daily income)
+    function updateSummary() {
+      const total = orders.length;
+      const completed = orders.filter(o => o.status === "Completed").length;
+      const pending = orders.filter(o => o.status === "Pending").length;
+
+      const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+
+      function toBanglaNumber(numberStr) {
+        return numberStr.replace(/\d/g, d => banglaDigits[d]);
+      }
+
+      const todayStr = new Date().toISOString().slice(0, 10);
+      const dailyIncome = orders
+        .filter(o => o.status === "Completed" && o.date === todayStr)
+        .reduce((sum, o) => sum + o.income, 0);
+
+      // Convert counts to Bangla digits
+      document.getElementById("totalOrders").textContent = toBanglaNumber(total.toString());
+      document.getElementById("completedOrders").textContent = toBanglaNumber(completed.toString());
+      document.getElementById("pendingOrders").textContent = toBanglaNumber(pending.toString());
+
+      // Convert dailyIncome to Bangla digits inline
+      document.getElementById("dailyIncome").textContent = `৳ ${toBanglaNumber(dailyIncome.toFixed(2))}`;
+
+
+      // Update the chart data
+      if (orderChartInstance) {
+        orderChartInstance.data.datasets[0].data = [pending, completed, total - pending - completed];
+        orderChartInstance.update();
+      }
+    }
+
+    // Initialize Chart.js doughnut chart
+    let orderChartInstance = null;
+    function renderChart() {
+      const pendingCount = orders.filter(o => o.status === "Pending").length;
+      const completedCount = orders.filter(o => o.status === "Completed").length;
+      const cancelledCount = orders.filter(o => o.status === "Cancelled").length;
+
+      const ctx = document.getElementById('orderChart').getContext('2d');
+      if (orderChartInstance) {
+        orderChartInstance.data.datasets[0].data = [pendingCount, completedCount, cancelledCount];
+        orderChartInstance.update();
+      } else {
+        orderChartInstance = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Pending', 'Completed', 'Cancelled'],
+            datasets: [{
+              data: [pendingCount, completedCount, cancelledCount],
+              backgroundColor: ['#ffc107', '#198754', '#dc3545'],
+              hoverOffset: 8
+            }]
+          },
+          options: {
+            plugins: {
+              legend: { position: 'bottom' }
+            }
+          }
+        });
+      }
+    }
+
+    // Initial load
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadOrdersFromDB();
     });
   </script>
-<script>
-let orders = [
-  {
-    customer: "Tanvir Hossain",
-    address: "House 123, Road 4, Dhaka",
-    phone: "017xxxxxxxx",
-    service: "AC Installation",
-    status: "Pending",
-    date: "2025-07-05"
-  },
-  {
-    customer: "Shakil Ahmed",
-    address: "Apartment 56B, Chattogram",
-    phone: "018xxxxxxxx",
-    service: "Freon Gas Refill",
-    status: "Completed",
-    date: "2025-07-04"
-  },
-  {
-    customer: "Sadia Khan",
-    address: "Sector 10, Khulna",
-    phone: "019xxxxxxxx",
-    service: "Fan Motor Repair",
-    status: "Cancelled",
-    date: "2025-07-03"
-  }
-];
+  <script>
+    const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 
-function getStatusColor(status) {
-  switch (status) {
-    case "Pending": return "warning";
-    case "Completed": return "success";
-    case "Cancelled": return "danger";
-    default: return "secondary";
-  }
-}
+    function toBanglaNumber(numberStr) {
+      return numberStr.replace(/\d/g, d => banglaDigits[d]);
+    }
 
-function handleSubmit(event) {
-  event.preventDefault();
+    const banglaMonths = ['জানুয়ারি', 'ফেব্রুয়ারি', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টেম্বর', 'অক্টোবর', 'নভেম্বর', 'ডিসেম্বর'];
 
-  // Collect selected services as an array
-  const serviceSelect = document.getElementById("customerService");
-  const selectedServices = Array.from(serviceSelect.selectedOptions).map(opt => opt.value);
+    const today = new Date();
+    const day = toBanglaNumber(today.getDate().toString().padStart(2, '0'));
+    const month = banglaMonths[today.getMonth()];
+    const year = toBanglaNumber(today.getFullYear().toString());
 
-  const index = document.getElementById("editIndex").value;
+    const banglaDate = `(${day} ${month} ${year})`;
 
-  const newOrder = {
-    customer: document.getElementById("customerName").value,
-    address: document.getElementById("customerAddress").value,
-    phone: document.getElementById("customerPhone").value,
-    service: selectedServices, // now an array
-    status: document.getElementById("customerStatus").value,
-    date: document.getElementById("customerDate").value
-  };
+    document.getElementById("currentDateBangla").textContent = banglaDate;
 
-  if (index === "") {
-    orders.push(newOrder);
-  } else {
-    orders[index] = newOrder;
-  }
-
-  // Hide modal
-  const modalEl = document.getElementById("orderModal");
-  const modalInstance = bootstrap.Modal.getInstance(modalEl);
-  if (modalInstance) modalInstance.hide();
-
-  document.getElementById("orderForm").reset();
-  document.getElementById("editIndex").value = "";
-  renderOrders();
-}
-
-function editOrder(index) {
-  const order = orders[index];
-  document.getElementById("editIndex").value = index;
-  document.getElementById("customerName").value = order.customer;
-  document.getElementById("customerAddress").value = order.address || "";
-  document.getElementById("customerPhone").value = order.phone;
-
-  // Clear all selected options first
-  const serviceSelect = document.getElementById("customerService");
-  Array.from(serviceSelect.options).forEach(option => {
-    option.selected = false;
-  });
-
-  // Select options matching order.service array
-  if (Array.isArray(order.service)) {
-    order.service.forEach(svc => {
-      const option = Array.from(serviceSelect.options).find(opt => opt.value === svc);
-      if (option) option.selected = true;
-    });
-  } else if (typeof order.service === "string") {
-    // fallback if old single string
-    const option = Array.from(serviceSelect.options).find(opt => opt.value === order.service);
-    if (option) option.selected = true;
-  }
-
-  document.getElementById("customerStatus").value = order.status;
-  document.getElementById("customerDate").value = order.date;
-
-  new bootstrap.Modal(document.getElementById("orderModal")).show();
-}
-
-function deleteOrder(index) {
-  if (confirm("Are you sure you want to delete this order?")) {
-    orders.splice(index, 1);
-    renderOrders();
-  }
-}
-
-function renderOrders() {
-  const tbody = document.getElementById("orderTable");
-  tbody.innerHTML = "";
-  orders.forEach((order, index) => {
-    const serviceText = Array.isArray(order.service) ? order.service.join(", ") : order.service;
-
-    tbody.innerHTML += `
-      <tr>
-        <td>${index + 1}</td>
-        <td>${order.customer}</td>
-        <td>${order.address || ""}</td>
-        <td>${order.phone}</td>
-        <td>${serviceText}</td>
-        <td><span class="badge bg-${getStatusColor(order.status)}">${order.status}</span></td>
-        <td>${order.date}</td>
-        <td>
-          <button class="btn btn-sm btn-primary" onclick="editOrder(${index})">Edit</button>
-          <button class="btn btn-sm btn-danger" onclick="deleteOrder(${index})">Delete</button>
-        </td>
-      </tr>
-    `;
-  });
-}
-
-// Initial render
-renderOrders();
-</script>
+  </script>
 
 </body>
+
 </html>
